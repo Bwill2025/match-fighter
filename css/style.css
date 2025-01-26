@@ -1,0 +1,20 @@
+body {
+  background-color: white;
+  
+}
+
+
+#board {
+
+  background-image: url("https://i.pinimg.com/originals/63/8f/5b/638f5bf4253604ee28131d8d943e49be.gif");
+
+  background-size: cover;
+
+  background-position: center;
+
+  width: 1200px;
+
+  height: 900px;
+
+  padding: 50px 100px 10px 100px
+}
