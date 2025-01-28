@@ -1,20 +1,50 @@
+
+
+
+
+
 body {
-  background-color: white;
-  
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items:baseline;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  margin: 0;
+  background-image: url('https://i.pinimg.com/originals/63/8f/5b/638f5bf4253604ee28131d8d943e49be.gif') ;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color:steelblue;
 }
 
+h1 {
+  font-family: 'Brush Script MT', cursive;
+    color: #4CAF50;
+    text-shadow: 2px 2px 5px #000000;
+    font-size: 8em;
+    letter-spacing: 2px;
+    margin: 20px 0;
+  text-align: center;
+}
 
-#board {
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 10px;
+  margin-top: 20px;
+}
 
-  background-image: url("https://i.pinimg.com/originals/63/8f/5b/638f5bf4253604ee28131d8d943e49be.gif");
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(131, 135, 140);
 
-  background-size: cover;
-
-  background-position: center;
-
-  width: 1200px;
-
-  height: 900px;
-
-  padding: 50px 100px 10px 100px
+  border: 2px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor:grabbing;
 }
