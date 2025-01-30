@@ -1,32 +1,24 @@
-
-
-
-
-
 body {
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  align-items:baseline;
-  height: 100%;
-  width: 100%;
-  background-position: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  
   margin: 0;
-  background-image: url('https://i.pinimg.com/originals/63/8f/5b/638f5bf4253604ee28131d8d943e49be.gif') ;
-  background-size:contain;
+  background-image: url('https://i.pinimg.com/originals/63/8f/5b/638f5bf4253604ee28131d8d943e49be.gif');
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color:steelblue;
 }
 
 h1 {
   font-family: 'Brush Script MT', cursive;
-    color: #4CAF50;
-    text-shadow: 2px 2px 5px #000000;
-    font-size: 8em;
-    letter-spacing: 2px;
-    margin: 20px 0;
-  text-align: center;
+  color: #4CAF50;
+  text-shadow: 2px 2px 5px #000000;
+  font-size: 8em;
+  letter-spacing: 2px;
+  margin: 20px 0;
 }
 
 .game-board {
@@ -39,12 +31,34 @@ h1 {
 .card {
   width: 100px;
   height: 100px;
-  background-color: rgb(131, 135, 140);
-
+  background-color: gray;
+ 
+  
+  
   border: 2px solid #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
   cursor:grabbing;
+  transition: transform 0.5s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #1310c6;
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+li {
+  color: white;
 }
