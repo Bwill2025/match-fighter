@@ -1,20 +1,27 @@
 
-const cardsArray = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D'];
-// hmmmm letters now arent showing but reset button
-// and heading and cards arent shifting but background is jacked again
+
 let firstCard, secondCard;
 
-let hasFlippedBox = false;
+let hasFlippedCard = false;
 
 let lockBoard = false;
+
+
+
+let totalCards = [];
 
 const gameBoard = document.getElementById('gameBoard');
 
 const resetButton = document.getElementById('resetButton');
 
+const gameMessage = document.querySelector('.message')
+
+const cardsArray = Array.from(gameBoard.children);
+
+ 
 function initializeGame() {
 
-    const cardsArray = Array.from(gameBoard.children);
+    
 
    
     cardsArray.sort(() => 0.5 - Math.random());
@@ -33,15 +40,30 @@ function initializeGame() {
 
     resetBoard();
 
+  
+
 }
+
+function checkForWinner () {
+    if (totalCards.length === 8) {
+        gameMessage.textContent = "You Win"
+    } 
+}
+
+
+
+
 
 function flipCard() {
 
-    if (lockBoard || this === firstCard) return;
+    if (lockBoard || this === firstCard) 
+        
+        return;
 
     this.textContent = this.dataset.value;
 
     this.classList.add('flip');
+
 
     if (!hasFlippedCard) {
 
@@ -49,9 +71,18 @@ function flipCard() {
 
         firstCard = this;
 
+        totalCards.push(firstCard) 
+
+
+    
+
+        
+
     } else {
 
         secondCard = this;
+
+        totalCards.push(secondCard)
 
         checkForMatch();
 
@@ -64,6 +95,12 @@ function checkForMatch() {
     if (firstCard.dataset.value === secondCard.dataset.value) {
 
         disableCards();
+
+   
+
+    checkForWinner();
+
+     
 
     } else {
 
@@ -97,16 +134,26 @@ function unflipCards() {
 
         resetBoard();
 
-    }, 1500);
+    }, 1000);
 }
 
 function resetBoard() {
 
     [hasFlippedCard, lockBoard] = [false, false];
 
-    [firstCard, secondCard] = [null, null];
+    [firstCard, secondCard] = ['', ''];
 
 }
-resetButton.addEventListener('click', initializeGame);
+
+resetButton.addEventListener('click',() => {
+
+    initializeGame();
+
+});
+
+
+
+
+
 
 initializeGame();

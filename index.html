@@ -8,36 +8,40 @@
     <title>Match-Fighter</title>
     
 </head>
+
 <body>
     <h1>Match Fighter</h1>
-
+    <h2 class="message"></h2>
     <div class="game-board" id="gameBoard">
-        <div class="card" box="A"></div>
-        <div class="card" box="A"></div>
-        <div class="card" box="B"></div>
-        <div class="card" box="B"></div>
-        <div class="card" box="C"></div>
-        <div class="card" box="C"></div>
-        <div class="card" box="D"></div>
-        <div class="card" box="D"></div>
+        
+
+        <div class="card" data-value="X"><img src="" alt="Image X"></div>
+        <div class="card" data-value="X"><img src="" alt="Image X"></div>
+        <div class="card" data-value="I"><img src="" alt="Image I"></div>
+        <div class="card" data-value="I"><img src="" alt="Image I"></div>
+        <div class="card" data-value="O"><img src="" alt="Image O"></div>
+        <div class="card" data-value="O"><img src="" alt="Image O"></div>
+        <div class="card" data-value="U"><img src="" alt="Image U"></div>
+        <div class="card" data-value="U"><img src="" alt="Image U"></div>
+
     </div>
     
   <ul>
         <li>Rules for Participating Fighters:</li>
-        <li> </li>
         <li>Rule 1: Click box to reveal fighter</li>
         <li>Rule 2: Click another box to match fighter</li>
         <li>Rule 3: If two boxes match, continue the fight (matching)</li>
         <li>Rule 4: If two boxes dont match, they will flip back & try again</li>
         <li>Rule 5: Continue matching until all boxes are matched</li>
         <li>Final Rule: Do not talk about Match Fighter</li>
+        <li> (By the way... Don't forget your fight music below)</li>
     </ul>
     <button id="resetButton">Reset Game</button>
     <audio id="backgroundMusic" controls autoplay loop>
         <source src="https://vgmsite.com/soundtracks/street-fighter-2-turbo/mcnpjaxdha/33.%20Guile%20Stage.mp3" type="audio/mpeg">
       
 
-   
+ 
     
     
 </body>
