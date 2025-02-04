@@ -21,6 +21,15 @@ h1 {
   margin: 20px 0;
 }
 
+h2 {
+  font-family: 'Brush Script MT', monospace;
+  color: #eae212;
+  text-shadow: 2px 2px 5px #000000;
+  font-size: 8em;
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: repeat(4, 100px);

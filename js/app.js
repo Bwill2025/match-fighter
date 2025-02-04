@@ -6,9 +6,11 @@ let hasFlippedCard = false;
 
 let lockBoard = false;
 
-
+let matchCount = 0;
 
 let totalCards = [];
+
+let incorrectAttempts = 0;
 
 const gameBoard = document.getElementById('gameBoard');
 
@@ -16,14 +18,13 @@ const resetButton = document.getElementById('resetButton');
 
 const gameMessage = document.querySelector('.message')
 
+const winSound = document.getElementById('winSound');
+
 const cardsArray = Array.from(gameBoard.children);
 
  
 function initializeGame() {
 
-    
-
-   
     cardsArray.sort(() => 0.5 - Math.random());
 
     cardsArray.forEach((card) => {
@@ -36,7 +37,15 @@ function initializeGame() {
 
         gameBoard.appendChild(card);
 
+        
+
     });
+    
+    matchCount = 0;
+
+    incorrectAttempts = 0;
+
+    gameMessage.textContent = '';
 
     resetBoard();
 
@@ -45,12 +54,28 @@ function initializeGame() {
 }
 
 function checkForWinner () {
-    if (totalCards.length === 8) {
+
+    if (matchCount === cardsArray.length) {
+
         gameMessage.textContent = "You Win"
+
+        winSound.play();
+
     } 
+
 }
 
+function checkForLoser() {
 
+    if (incorrectAttempts >= 5) {
+
+        gameMessage.textContent = 'You Lose';
+
+       
+
+    }
+
+}
 
 
 
@@ -71,7 +96,7 @@ function flipCard() {
 
         firstCard = this;
 
-        totalCards.push(firstCard) 
+       
 
 
     
@@ -82,7 +107,7 @@ function flipCard() {
 
         secondCard = this;
 
-        totalCards.push(secondCard)
+        
 
         checkForMatch();
 
@@ -96,13 +121,17 @@ function checkForMatch() {
 
         disableCards();
 
-   
+   matchCount += 2
 
     checkForWinner();
 
      
 
     } else {
+
+        incorrectAttempts++;
+
+        checkForLoser();
 
         unflipCards();
 
